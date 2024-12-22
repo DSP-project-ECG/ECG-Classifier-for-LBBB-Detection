@@ -2,21 +2,25 @@ import tkinter as tk
 from tkinter import ttk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
-
+from tkinter import PhotoImage
 
 class SignalVisualizerApp(tk.Tk):
-    
     def __init__(self):
         super().__init__()
-        self.title("Signal Visualizer")
-        self.geometry("1000x700")
-        self.configure(bg="#F8FAFC")  # Soft light gray background
-        
+        self.title("Signal Processing Application")
+        self.geometry("1000x600")
+
+        # Load the background image
+        self.background_image = PhotoImage(file="Pics/Intro.png")
+
+        # Add the image as a label
+        self.background_label = tk.Label(self, image=self.background_image)
+        self.background_label.place(relwidth=1, relheight=1)
+
         self.style = ttk.Style(self)
         self._set_theme()
 
         self._create_layout()
-
     def _set_theme(self):
         """Set the ttk theme and style."""
         self.style.theme_use("clam")
