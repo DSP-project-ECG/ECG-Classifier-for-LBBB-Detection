@@ -117,3 +117,19 @@ def plot_signal_comparison(original_signals, processed_signals, fs, num_examples
     
     plt.tight_layout()
     plt.show()
+def plot(numbers,title):
+    # Generate x-coordinates (index of each number)
+    x = list(range(len(numbers)))
+
+    # Draw a line through the points
+    plt.plot(x, numbers, color='blue', linestyle='-', linewidth=2)
+
+    # Add labels and a legend
+    plt.xlabel('Index')
+    plt.ylabel('ECG')
+    plt.title(title)
+    plt.legend()
+
+    # Display the plot
+    plt.grid(True)
+    plt.show()
