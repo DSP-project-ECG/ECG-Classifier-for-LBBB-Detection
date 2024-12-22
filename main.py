@@ -82,7 +82,7 @@ class SignalVisualizerApp(tk.Tk):
         )
         title_label.pack(pady=20)
         # Main Plotting Area
-        self._create_plot_area()
+      #  self._create_plot_area()
 
         # Buttons Section
         self._create_buttons()
