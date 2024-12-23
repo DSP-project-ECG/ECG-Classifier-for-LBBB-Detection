@@ -133,3 +133,31 @@ def plot(numbers,title):
     # Display the plot
     plt.grid(True)
     plt.show()
+def extract_wavelet_features(signals, wavelet='db3', level=2):
+    """
+    Extract wavelet features from ECG signals using discrete wavelet transform.
+
+    Parameters:
+    signals (numpy.ndarray): Array of signals (each row is a signal).
+    wavelet (str): Wavelet type (e.g., 'db4').
+    level (int): Level of decomposition.
+
+    Returns:
+    numpy.ndarray: Array of wavelet features (using only approximation coefficients).
+    """
+    features = []
+    for signal in signals:
+        coeffs = pywt.wavedec(signal, wavelet, level=level)
+        # Use only approximation coefficients as features
+        feature_vector = []
+        feature_vector.append(np.mean(coeffs[0]))
+        feature_vector.append(np.std(coeffs[0]))
+        feature_vector.append(skew(coeffs[0]))
+        feature_vector.append(kurtosis(coeffs[0]))
+       # feature_vector.append(np.sum(coeffs[0] ** 2))  # Energy as the sum of squares
+       # feature_vector.append(entropy(np.abs(coeffs[0])))  # Entropy (based on absolute values)
+      #  feature_vector.append(np.max(coeffs[0]))  # Maximum value
+     #   feature_vector.append(np.min(coeffs[0]))  # Minimum value
+        features.append(feature_vector)  # Wrap in list to ensure 2D array
+    return np.array(features)
+
