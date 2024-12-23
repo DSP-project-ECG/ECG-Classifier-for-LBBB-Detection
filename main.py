@@ -8,18 +8,18 @@ class SignalVisualizerApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Signal Processing Application")
-        self.geometry("1000x600")
+        self.geometry("830x560")
 
         # Load the background image
-        self.background_image = PhotoImage(file="Pics/Intro.png")
+        self.background_image = tk.PhotoImage(file="Pics/blueSignal.png")
 
-        # Add the image as a label
+        # Add the image as a label and make it fill the entire window
         self.background_label = tk.Label(self, image=self.background_image)
         self.background_label.place(relwidth=1, relheight=1)
 
+        # Configure style and layout
         self.style = ttk.Style(self)
         self._set_theme()
-
         self._create_layout()
     def _set_theme(self):
         """Set the ttk theme and style."""
@@ -59,8 +59,8 @@ class SignalVisualizerApp(tk.Tk):
         # Label Styling
         self.style.configure(
             "TLabel",
-            background="#F8FAFC",
-            foreground="#343A40",
+            background="#343A40",
+            foreground="#F8FAFC",
             font=("Helvetica", 12),
         )
         self.style.configure(
@@ -80,9 +80,12 @@ class SignalVisualizerApp(tk.Tk):
         anchor="center",
         font=("Helvetica", 24, "bold"),  
         )
-        title_label.pack(pady=20)
+        title_label.pack(pady=10)
+        
+
+        # Set the background color of the main window (if needed)
         # Main Plotting Area
-      #  self._create_plot_area()
+    #    self._create_plot_area()
 
         # Buttons Section
         self._create_buttons()
@@ -104,19 +107,12 @@ class SignalVisualizerApp(tk.Tk):
 
     def _create_buttons(self):
        """Create the buttons below the plot."""
-       button_frame = ttk.Frame(self, style="TFrame")
-       button_frame.pack(fill="x", pady=10)
-
-    # Use grid for centering buttons
-       button_frame.columnconfigure((0, 1), weight=1)
 
        ttk.Button(
-        button_frame, text="Upload Signal File", style="TButton", command=self.upload_signal_file
-       ).grid(row=0, column=0, padx=10)
+        self, text="Run Model", style="TButton", command=self.upload_signal_file
+       ).pack(pady=10)
 
-       ttk.Button(
-        button_frame, text="Run Model", style="TButton", command=self.run_model
-      ).grid(row=0, column=1, padx=10)
+       
 
     def upload_signal_file(self):
         """Handle uploading a signal file."""
