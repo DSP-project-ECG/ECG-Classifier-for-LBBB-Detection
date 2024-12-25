@@ -36,6 +36,7 @@ def create_bandpass_filter(lowcut, highcut, fs, order=4):
     low = lowcut / nyquist
     high = highcut / nyquist
     b, a = butter(order, [low, high], btype='band')
+    # h = b/a
     return b, a
 
 def apply_bandpass_filter_batch(signals, fs, lowcut=0.5, highcut=40, order=4):

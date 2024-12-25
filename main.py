@@ -18,9 +18,7 @@ def plot_ecg_signal1(data):
     
     Parameters:
     data (pandas.DataFrame): DataFrame containing ECG samples.
-    """
-    
-
+    """  
     # Create a new tkinter window
     new_window = tk.Toplevel()
     new_window.title("ECG Signal Plot")
@@ -150,8 +148,8 @@ class SignalVisualizerApp(tk.Tk):
                 else :
                     messagebox.showinfo("good News", "The person is not diagnosed with Left Bundle Branch Block (LBBB)")
 
-           # except Exception as e:
-            #    messagebox.showerror("Error", f"Failed to preprocess signals: {e}")
+         #   except Exception as e:
+          #      messagebox.showerror("Error", f"Failed to preprocess signals: {e}")
         else:
             messagebox.showerror("Error", "No signal file uploaded!")
 
