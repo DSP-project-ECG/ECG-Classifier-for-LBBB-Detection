@@ -23,7 +23,45 @@
 
 -------------      
  
-<h3 id="-our-progress">⏳Our Progress</h3>
+<h2 id="-our-progress">⏳Our Progress</h3>
+
+### Data Preprocessing
+The data preprocessing step involves:
+1. Removing noise from the ECG signals using a **Butterworth bandpass filter**.
+2. Normalizing the signals to a standard range to ensure consistent feature extraction.
+
+---
+
+### Feature Extraction
+Features are extracted from the preprocessed signals using **wavelet transforms**.  
+Statistical features such as:
+- Mean
+- Standard deviation
+- Skewness
+- Kurtosis  
+are calculated from the wavelet coefficients.
+
+---
+
+### Model Training and Evaluation
+Various machine learning models are trained and evaluated on the extracted features, including:
+- **K-Nearest Neighbors (KNN)**
+- **Support Vector Machine (SVM)**
+- **Random Forest**
+- **Decision Tree**
+- **Naive Bayes**
+
+The best model is selected based on **accuracy** and other evaluation metrics.
+
+---
+
+### Deployment
+The best-performing model (**KNN**) is deployed using a **GUI application**.  
+This application allows users to:
+- Input ECG signals
+- Receive a classification result: **Normal** or **LBBB**
+
+![{13FBAD89-C737-46B1-A3AE-C90534AFE065}](https://github.com/user-attachments/assets/3b3b6e00-6708-4fd5-b014-5e0011b06694)
 
 
  -------------       
@@ -33,7 +71,7 @@
 | Model Name | Train Accuracy | Test Accuracy |
 |---|---|---|
 | K-Nearest Neighbors | 99% | 100% |
-| Naive Bayes (Multinomial) | 100% | 53% |
+| Naive Bayes  | 100% | 53% |
 | Support Vector Machine (SVM) | 100% | 47% |
 | Decision Tree | 100% | 35% |
 | Random Forest | 100% | 35% |
