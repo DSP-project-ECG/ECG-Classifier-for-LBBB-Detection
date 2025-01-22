@@ -20,6 +20,7 @@
  
 <h3 id="-description">🚀Description</h3>   
 
+An AI model using various machine learning algorithms like KNN and SVM for detecting Left Bundle Branch Block (LBBB) in ECG signals. The project includes data preprocessing, feature extraction, model training, evaluation, and deployment through a GUI application.
 
 -------------      
  
