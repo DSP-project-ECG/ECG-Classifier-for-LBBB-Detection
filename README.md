@@ -4,7 +4,9 @@
  
 # ECG Classifier for LBBB Detection
 
-![{B65A14C1-DC1F-4CDD-8B33-0172456F5D4B}](https://github.com/user-attachments/assets/7814871f-ee07-4c80-99df-6043d61ae3b3)
+
+![image](https://github.com/user-attachments/assets/e9b8dcfc-0801-4017-be9a-2ca65cad9339)
+
 
  
 
